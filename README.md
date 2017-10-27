@@ -1,26 +1,20 @@
 # ember-head
 
-This README outlines the details of collaborating on this Ember addon.
+This addon gives you a component for rendering content into `<head>`. It works in both the browser and in fastboot. This makes it ideal for things like Opengraph and Twitter Cards.
+
+```hbs
+{{#in-head}}
+  <meta property="og:title" content="Babies">
+  <meta property="og:description" content="Learn the shocking truth.">
+  <meta property="og:image" content="https://example.com/example.jpg">
+{{/in-head}}
+```
+
+You can put the above into any template, and as long as it stays rendered, the content will stay in the `<head>`. 
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-head`
-* `yarn install`
+```sh
+ember install ember-head
+```
 
-## Running
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-## Running Tests
-
-* `yarn test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
