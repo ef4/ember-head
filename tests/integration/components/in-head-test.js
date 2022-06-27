@@ -12,6 +12,14 @@ module('Integration | Component | in head', function(hooks) {
     assert.ok(document.querySelector('meta[property="yes"]'), "should find our meta");
   });
 
+  test('it adds content to head when an invalid element has been added before it', async function(assert) {
+    assert.expect(1);
+    // The spec says head should always be the first child but Ronin Wallet inserts its script before head
+    document.documentElement.prepend(document.createElement('script'));
+    await render(hbs`{{#in-head}}<meta property="yes" content="it-works">{{/in-head}}`);
+    assert.ok(document.querySelector('meta[property="yes"]'), "should find our meta");
+  });
+
   test('it removes content from head', async function(assert) {
     assert.expect(1);
     this.set('showIt', true);
