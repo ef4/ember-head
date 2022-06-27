@@ -12,9 +12,8 @@ export default Component.extend({
     while (child) {
       if (child.tagName === 'HEAD') {
         return child;
-      } else {
-        return child.nextSibling;
-      }
+      } 
+      child = child.nextSibling;
     }
   })
 });
