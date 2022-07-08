@@ -22,7 +22,10 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    'ember/no-classic-components': 'off',
+    'ember/require-tagless-components': 'off',
+  },
   overrides: [
     // node files
     {
