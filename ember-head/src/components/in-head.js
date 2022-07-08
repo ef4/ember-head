@@ -1,12 +1,9 @@
 import Component from '@ember/component';
-import layout from '../templates/components/in-head';
-import { computed } from '@ember/object';
 import { getOwner } from '@ember/application';
+import { getGlobalConfig } from '@embroider/macros';
 
-export default Component.extend({
-  tagName: '',
-  layout,
-  head: computed(function() {
+export default class extends Component {
+  get head() {
     let document = getDOM(this).documentElement;
     let child = document.firstChild;
     while (child) {
@@ -15,8 +12,11 @@ export default Component.extend({
       } 
       child = child.nextSibling;
     }
-  })
-});
+  }
+  get inFastboot() {
+    return getGlobalConfig().fastboot?.isRunning;
+  }
+}
 
 function getDOM(context) {
   let { renderer } = context;

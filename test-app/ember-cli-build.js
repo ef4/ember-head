@@ -2,6 +2,8 @@
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
+process.env.EMBROIDER_REBUILD_ADDONS = 'ember-head';
+
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
     // Add options here

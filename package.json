@@ -5,7 +5,8 @@
   "license": "MIT",
   "author": "",
   "workspaces": [
-    "packages/*"
+    "ember-head",
+    "test-app"
   ],
   "scripts": {
     "prepare": "yarn workspace ember-head run prepare",
