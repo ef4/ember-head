@@ -12,7 +12,7 @@
     "start:test": "pnpm run --filter test-app start",
     "lint": "pnpm run --recursive lint",
     "lint:fix": "pnpm run --recursive lint:fix",
-    "test": "pnpm run --recursive test"
+    "test": "pnpm run --filter test-app test"
   },
   "devDependencies": {
     "concurrently": "^7.2.1",

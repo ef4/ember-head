@@ -70,7 +70,6 @@ importers:
       ember-fetch: ^8.1.1
       ember-head: ^0.1.1
       ember-load-initializers: ^2.1.2
-      ember-page-title: ^7.0.0
       ember-qunit: ^5.1.5
       ember-resolver: ^8.0.3
       ember-source: ~4.4.0
@@ -112,7 +111,6 @@ importers:
       ember-fetch: 8.1.1
       ember-head: link:../ember-head
       ember-load-initializers: 2.1.2
-      ember-page-title: 7.0.0
       ember-qunit: 5.1.5_66aaf4259d52975831654068563a6d0a
       ember-resolver: 8.0.3
       ember-source: 4.4.2_webpack@5.73.0
@@ -5501,15 +5499,6 @@ packages:
       ember-cli-typescript: 2.0.2
     transitivePeerDependencies:
       - '@babel/core'
-      - supports-color
-    dev: true
-
-  /ember-page-title/7.0.0:
-    resolution: {integrity: sha512-oq6+HYbeVD/BnxIO5AkP4gWlsatdgW2HFO10F8+XQiJZrwa7cC7Wm54JNGqQkavkDQTgNSiy1Fe2NILJ14MmAg==}
-    engines: {node: 12.* || 14.* || >= 16}
-    dependencies:
-      ember-cli-babel: 7.26.11
-    transitivePeerDependencies:
       - supports-color
     dev: true
 
