@@ -1,25 +1,51 @@
 {
   "version": "0.0.0",
   "private": true,
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ef4/ember-head.git"
+  },
   "license": "MIT",
   "author": "",
+  "workspaces": [
+    "ember-head",
+    "test-app"
+  ],
   "scripts": {
-    "prepare": "pnpm run build",
     "build": "pnpm run --filter ember-head build",
+    "lint": "pnpm run --recursive lint",
+    "lint:fix": "pnpm run --recursive lint:fix",
+    "prepare": "pnpm run build",
     "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
     "start:addon": "pnpm run --filter ember-head start",
     "start:test": "pnpm run --filter test-app start",
-    "lint": "pnpm run --recursive lint",
-    "lint:fix": "pnpm run --recursive lint:fix",
     "test": "pnpm run --filter test-app test"
   },
   "devDependencies": {
     "concurrently": "^7.2.1",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "release-it": "^14.2.1",
+    "release-it-lerna-changelog": "^3.1.0",
+    "release-it-yarn-workspaces": "^2.0.0"
   },
-  "workspaces": [
-    "ember-head",
-    "test-app"
-  ]
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      },
+      "release-it-yarn-workspaces": true
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    },
+    "npm": false
+  }
 }
