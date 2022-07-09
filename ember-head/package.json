@@ -1,6 +1,6 @@
 {
   "name": "ember-head",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "Fastboot-compatible component for rendering content into <head>.",
   "keywords": [
     "ember-addon"
